@@ -4,7 +4,7 @@ This project fetches the DOM of multiple URLs using Puppeteer, validates the HTM
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) (version 12 or higher)
+- [Node.js](https://nodejs.org/) (version 20 or higher)
 - [npm](https://www.npmjs.com/) (comes with Node.js)
 
 ## Installation
