@@ -1,4 +1,4 @@
-# HTML Validator
+# DOM Validator
 
 This project fetches the DOM of multiple URLs using Puppeteer, validates the HTML, and saves the validation results with detailed error messages in CSV format.
 
