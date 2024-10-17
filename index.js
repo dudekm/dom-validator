@@ -19,7 +19,7 @@ async function validateDom(domContent) {
         const errorDetails = result.messages
             .map(message =>
                 `Type: ${message.type}, Line ${message.lastLine}, col ${message.firstColumn}: ${message.message}`
-            ).join('; ');
+            ).join('\n');
 
         return { valid: false, details: errorDetails };
     } catch (error) {
@@ -56,11 +56,10 @@ function loadUrlsFromFile(filePath) {
 
 function saveResultsToCsv(filePath, results) {
     const fields = ['url', 'status', 'details'];
-    const parser = new Parser({ fields });
+    const opts = { fields, quote: '"', eol: '\n' };
+    const parser = new Parser(opts);
 
     let csv = parser.parse(results);
-
-    csv = csv.split('\n').map(line => line.trim()).join('\n') + '\n';
 
     fs.writeFileSync(filePath, csv, 'utf-8');
     console.log(`Results saved to ${filePath}`);
